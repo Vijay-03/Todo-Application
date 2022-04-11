@@ -1,0 +1,46 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> register </title>
+        <link rel="stylesheet" href="../static/style.css"> 
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>      
+    </head>
+    <body>
+        <div class="registercontent" align="center">
+            <br><br>
+            <div class="registertop">
+                <b><h2>Register</h2></b>
+            </div></br>
+        <div class="registerbottom">
+            <form action="{{ url_for('register')}}" method="post" autocomplete="off">
+                <div class="msg">{{ msg }}</div>
+                <div style = "padding: 50px 30% 5px 30%; " >
+                   <div class = "input-group input-group-lg">
+                      <span class = "input-group-addon">@</span>
+                      <input type = "text" name="username" class = "form-control" placeholder="Enter Your Username" class="textbox" id="username" required>
+                   </div>
+                
+                </div>
+                <div style = "padding: 5px 30% 10px 30%; " >
+                
+                   <div class = "input-group input-group-lg">
+                      <span class = "input-group-addon">@</span>
+                      <input type="password" name="password" placeholder="Enter Your Password" class="form-control" id="password" required>
+                   </div>
+                
+                </div>
+                <button type = "submit" class = "btn btn-primary btn-lg" value="Register">
+                    Register
+                </button>
+            </form></br></br>
+            <p class="worddark" style=" font-size: medium;">Already have account? <a class="worddark" href="{{ url_for('login')}}">Login here</a></p>
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html lang="en">
+    <head>
+        <title>index</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    
+    </head>
+  
+    <body bgcolor="#e6ffee">
+        <div class="one">
+            <div class="two">
+                <h1>Note MyThings</h1>
+                <nav class = "navbar navbar-inverse" role = "navigation">
+   
+                    <div class = "navbar-header">
+                       <a class = "navbar-brand" href = "{{url_for('index')}}">Home</a>
+                    </div>
+                    <div>
+                       <ul class = "nav navbar-nav">
+                        <li ><a href = "{{url_for('lists')}}">List</a></li>
+                          <li ><a href = "{{url_for('tasks')}}">Task</a></li>
+                          <li class = "active"><a href = "{{url_for('logout')}}">Log out</a></li>
+                       </ul>
+                    </div>
+                 </nav>
+            </div>
+            {% block content %} {% endblock %}
+            <div class="content" align="center">
+                <div class="topbar">
+                                            
+                </div></br></br>
+                
+            </div>
+        </div>
+    </body>
+</html>

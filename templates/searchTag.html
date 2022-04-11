@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+
+<body>
+    <div class="ui container" style="margin-top: 50px;">
+        <h1 class="ui center aligned header">Search Results</h1> 
+        <form action="/tasks">
+            <button type="submit">
+                <div class="ui animated button" tabindex="0">
+                    <div class="visible content">Back</div>
+                    <div class="hidden content">
+                    <i class="left arrow icon"></i>
+                    </div>
+                </div>
+            </button>
+        </form>
+        {% for task in account %}
+            <div class="ui segment">
+                <form method="POST" action="/updateTask/{{ task['task_id'] }}">
+                    <p class="ui big header">
+                        <div class="ui input focus"><input type='text' name="task1" value=" {{ task['task_desc'] }} "></div>
+                    </p>
+
+                    {% if task['t_status']=='0' %}
+                        <span class="ui gray label">Incomplete</span>
+                    {% else %}
+                        <span class="ui green label">complete</span>
+                    {% endif %}
+
+                    <a class="ui teal button" href="/updateStatus/{{ task['task_id'] }}">UpdateStatus</a>
+                    <button class="ui blue button" type="submit">UpdateTask</button>
+                    <a class="ui red button" href="/deleteTask/{{ task['task_id'] }}">Delete</a>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>

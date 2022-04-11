@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+<div class="ui container" style="margin-top: 50px;">
+    <form action="/tasks">
+        <button type="submit">
+            <div class="ui animated button" tabindex="0">
+                <div class="visible content">Back</div>
+                <div class="hidden content">
+                <i class="left arrow icon"></i>
+                </div>
+            </div>
+        </button>
+    </form>
+    <div class="ui segment">
+        <h2 class="ui left floated header">Hashtags</h2>
+        <div class="ui clearing divider"></div>
+        <ul>
+            <p>
+                {% for tag in tags%} 
+                <li>{{ tag }}</li>
+                {% endfor %}
+            </p>
+        </ul>
+    </div>
+
+</div>

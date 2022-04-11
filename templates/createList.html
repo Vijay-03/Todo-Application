@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+<div class="ui container" style="margin-top: 50px;">
+    <h1 class="ui center aligned header">NEW LIST</h1> 
+    <div style="margin-left: 400px;">
+        <form action="/createList" method="POST">
+            <p style="color: red;">Enter a new name!!</p> 
+            {% if msg1!="" %}<p style="color: green;">{{ msg1 }}</p> {% endif %}
+            <p class="ui teal button">ListName:</p>
+            <div class="ui input focus">
+                <input type="text" name="lname" value="{{ val1 }}" required>
+            </div>
+            <br><br> 
+            <div class="ui input focus">
+                <input  type="text" name="item">
+            </div>
+            <button class="ui teal button" type="submit">Add Item</button>
+        </form>
+        {% if msg3!="" %}<p style="color: green;">{{ msg3 }}</p> {% endif %}
+        {% if msg!="" %}<p style="color: red;">{{ msg }}</p>{% endif %}
+        <div class="ui input focus">
+            <a class="ui teal button" href="/lists" type="submit">Save</a>    
+        </div> 
+    </div>
+</div>
+{% endblock %}
